@@ -2,8 +2,6 @@
     background-position: 70% 25% !important;
 }
 
-
-
 .timeline-gallery-del .item img{
     width: 500px !important;
     height: 500px !important;
@@ -27,6 +25,9 @@
 @media (max-width: 991px) {
     .invite .invite_info {
         width: 100%;
+    }
+    .bg-custom {
+        background-position: 47% -190px !important;
     }
     #giftregistry {
         padding: 0px !important;
