@@ -1,0 +1,37 @@
+.zs-enabled .zs-slideshow .zs-slides .zs-slide {
+    background-position: 70% 25% !important;
+}
+
+
+
+.timeline-gallery-del .item img{
+    width: 500px !important;
+    height: 500px !important;
+    object-fit: cover;
+}
+.invite .invite_info {
+    width: 66%;
+}
+
+.parallax-background {
+    background-position: 50% 14% !important;
+}
+@media (max-width: 991px) {
+    .gallery-container .timeline-gallery-wrapper .item > img {
+        border-radius: 50%;
+        width: 312px !important;
+        height: 312px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .invite .invite_info {
+        width: 100%;
+    }
+    #giftregistry {
+        padding: 0px !important;
+    }
+    .extra-padding-section {
+        padding: 150px 0 !important;
+    }
+}
