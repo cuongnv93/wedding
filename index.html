@@ -885,9 +885,9 @@
           <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2  col-xxl-6 offset-xxl-3">
             <div class="form-wrapper flowers neela-style">
               <h1 class="section-title">Sổ Lưu Bút</h1>
-              <form id="wish-form" class="form validate-rsvp-form row contact-validation-active" method="post">
+              <form id="leadForm" class="form validate-rsvp-form row contact-validation-active" method="post">
                 <div>
-                  <input type="text" name="name" placeholder="Tên của bạn*" class="form-control">
+                  <input id="name" type="text" name="name" placeholder="Tên của bạn*" class="form-control">
                 </div>
 
                 <div>
@@ -1135,7 +1135,34 @@
       </li>
     </ul>
   </div>
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
 
+        // Lấy dữ liệu từ form
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var message = document.getElementById('content').value;
+
+        // Gọi Google Apps Script API để gửi dữ liệu vào Google Sheets
+        fetch('https://script.google.com/macros/s/AKfycbwIjoa0xgDCYVKz8zttZibLwwlV-s5mrwqTDMW0fiAENfg3TcPslwpVloO426egLkx2/exec', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                phone: phone,
+                message: message
+            })
+        }).then(response => {
+            alert('Dữ liệu đã được gửi thành công!');
+        }).catch(error => {
+            alert('Có lỗi xảy ra, vui lòng thử lại.');
+        });
+    });
+</script>
   <script>
     var slidehow_images = [
       // "https://cdn.biihappy.com/ziiweb/default/template/644000ba4f8e0c7ddf09c709/1f6f6347c9eec78781d536c34c177bb82.jpg",
